@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+html{
+    scroll-behavior: smooth;
+}
+.cursor{
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    background-color: t;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%,-50%);
+    mix-blend-mode: difference;
+}
+#pm33{
+    list-style: none;
+    cursor: none;
+}
+#pm33:hover ~ .cursor
+{
+    transform: translate(-50%,-50%) scale(4);
+    background: rgba(234, 238, 11, 0.304) ;
+    /* box-shadow: 0 0 0 100vh rgb(3, 1, 1); */
+}
+/* header{
+    background:linear-gradient(rgba(2, 143, 190, 0.252),transparent);
+} */
+#hd33{
+    height:100%;
+    align-content:start;
+}
+.ICT{
+    font-size: 30px;
+    padding-left: 10PX;
+}
+#foot{
+    padding: 5px;
+    padding-top: 10px;
+    background-color: rgb(253, 251, 251);
+}
+#maps{
+    width: 100%;
+
+}
+#pm33{
+    padding-top: 5vh;
+}
+#cs33{
+    padding-top:0px;
+}
+#gl33{
+    padding-top: 5vh;
+}
+#sub33{
+    padding-top: 5vh;
+}
+
+#sw33{
+    padding-top:2vh;
+}
+#wh33{
+    position:fixed;
+    right: 5vw;
+    top:82vh;
+    font-size:35px;
+    color: rgba(37, 211, 101, 0.877);
+}
+#yt{
+    padding: 20px;
+    padding-bottom: 40px;
+}

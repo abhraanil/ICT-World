@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICT World</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- start of header -->
+  <header class="text-gray-600 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row ite" class="bg">
+      <a href="index.html" class="flex title-font font-medium text-gray-900 hade007 mb-4 md:mb-0 it" id="hd33">
+          <img src="logo2.png" alt=""></img>
+        <h1 class="ICT">ICT World</h1>
+      </a>
+      <nav class="md:ml-auto flex flex-wrap  text-base items-center">
+        <a class="mr-5 hover:text-gray-900" href="index.html">Home</a>
+        <a class="mr-5 hover:text-gray-900" href="#Courses33">Courses</a>
+        <a class="mr-5 hover:text-gray-900" href="#aboutus">About Us</a>
+        <a class="mr-5 hover:text-gray-900" href="form.html">Contact</a>
+        <a class="mr-5 hover:text-gray-900" href="tel:9002990224">Call <i class="fa-solid fa-phone fa-shake"></i></a>
+      </nav>
+    </div>
+</header>
+<!-- end of header -->
+<!-- start of whatsapp -->
+<a href="https://wa.me/919002990224" id="wh33"><i class="fa-brands fa-square-whatsapp fa-bounce fa-2xl" ></i></a>
+<!-- end of whatsapp -->
+<!-- start of form  -->
+    <div class="formbold-main-wrapper">
+        <div class="formbold-form-wrapper">
+          <img src="https://hpassets.smartlook.com/wp-content/uploads/sites/2/2023/02/12163743/mobile-analytics.png">
+          <form method="post" name="google-sheet">
+            <div class="formbold-input-group">
+              <label for="name" class="formbold-form-label"> Name </label>
+              <input
+                type="text"
+                name="Name"
+                id="name"
+                placeholder="Enter your name"
+                class="formbold-form-input"
+              />
+            </div>
+      
+            <div class="formbold-input-group">
+              <label for="number" class="formbold-form-label"> Mobile Number </label>
+              <input
+                type="tel"
+                name="Mobile"
+                id="email"
+                placeholder="Mobile Number"
+                class="formbold-form-input"
+              />
+            </div>
+      
+            <div class="formbold-input-group">
+              <label for="age" class="formbold-form-label"> Age </label>
+              <input
+                type="text"
+                name="Age"
+                id="age"
+                placeholder="Enter your age"
+                class="formbold-form-input"
+              />
+            </div>
+      
+            <div class="formbold-input-group">
+              <label class="formbold-form-label">
+                Which Course are you looking for?
+              </label>
+      
+              <select class="formbold-form-select" name="Course" id="occupation">
+                <option value="DITA">DITA</option>
+                <option value="ACLP">ACLP</option>
+                <option value="python ">python</option>
+                <option value="fullstack">Full Stack Developer</option>
+                <option value="front end">Front End Developer</option>
+              </select>
+            </div>
+
+            <div class="formbold-input-group">
+                <label class="formbold-form-label">
+                  Which Branch are you looking for?
+                </label>
+        
+                <select class="formbold-form-select" name="Branch" id="occupation">
+                  <option value="Dakshin Habra">Dakshin Habra</option>
+                  <option value="Rudrapur">Rudrapur</option>
+                </select>
+              </div>
+      
+            <div class="formbold-input-radio-wrapper">
+              <label for="ans" class="formbold-form-label">
+                Do you have any computer certification?
+              </label>
+      
+              <div class="formbold-radio-flex">
+                <div class="formbold-radio-group">
+                  <label class="formbold-radio-label">
+                    <input
+                      class="formbold-input-radio"
+                      type="radio"
+                      name="Ans"
+                      id="ans"
+                    />
+                    Yes
+                    <span class="formbold-radio-checkmark"></span>
+                  </label>
+                </div>
+      
+                <div class="formbold-radio-group">
+                  <label class="formbold-radio-label">
+                    <input
+                      class="formbold-input-radio"
+                      type="radio"
+                      name="Ans"
+                      id="ans"
+                    />
+                    No
+                    <span class="formbold-radio-checkmark"></span>
+                  </label>
+                </div>
+
+           <button class="formbold-btn" onclick="openpopup()">Submit</button>
+          </form>
+          <div class="popup" id="popup">
+            <img src="https://cdn1.iconfinder.com/data/icons/creative-round-ui/255/41-512.png" >
+            <h2>Thank You!</h2>
+            <p>Your details has been successfully submitted. Thanks!</p>
+            <a href="index.html"><button type="button" >OK</button></a>
+          </div>
+        </div>
+      </div>
+<!-- end of form  -->
+<!-- start of js logic -->
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyjc9YSmqI3BeJioKGeU_7Oyxqw0b6dFPPcpuRrzQrpN_lnxhRwVg0CpTT9tncCR2B9/exec'
+        const form = document.forms['google-sheet']
+      
+
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => document.location.href="index.html")
+            .catch(error => console.error('Error!', error.message))
+            
+        })
+      </script>
+
+
+      <script>
+        let popup = document.getElementById("popup");
+        function openpopup(){
+          popup.classList.add("openpopup");
+        }
+      </script>
+</div>
+</div>
+<!-- end of js logic -->
+
+<!-- start of footer -->
+<footer class="text-gray-600 body-font"id="foot">
+  <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col" id="foot">
+    <a href="#" class="flex title-font font-medium text-gray-900 hade007 mb-4 md:mb-0 it" id="hd33">
+      <img src="logo2.png" alt=""></img>
+    <h1 class="ICT">ICT World</h1>
+  </a>
+    <p class="text-sm text-blue-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2024 ICT Word —
+      <a href="https://twitter.com/knyttneve" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@Abhranil</a>
+    </p>
+    <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+      <a class="text-blue-500" href="https://www.facebook.com/TheICTWorld">
+        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+        </svg>
+      </a>
+      <a class="ml-3 text-blue-500" href="https://www.facebook.com/TheICTWorld">
+        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+          <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+        </svg>
+      </a>
+      <a class="ml-3 text-blue-500" href="https://www.facebook.com/TheICTWorld">
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+        </svg>
+      </a>
+      <a class="ml-3 text-blue-500" href="https://www.facebook.com/TheICTWorld">
+        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+          <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+          <circle cx="4" cy="4" r="2" stroke="none"></circle>
+        </svg>
+      </a>
+    </span>
+  </div>
+</footer>
+<!-- end of footer -->
+
+</body>
+</html>
