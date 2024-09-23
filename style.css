@@ -65,9 +65,16 @@ html{
 }
 #wh33{
     position:fixed;
-    right: 5vw;
-    top:82vh;
-    font-size:35px;
+    right: 3vw;
+    top:78vh;
+    font-size:30px;
+    color: rgba(37, 211, 101, 0.877);
+}
+.ai{
+    position:fixed;
+    right: 3vw;
+    top:78vh;
+    font-size:30px;
     color: rgba(37, 211, 101, 0.877);
 }
 #yt{
